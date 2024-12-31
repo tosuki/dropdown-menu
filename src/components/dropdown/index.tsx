@@ -25,6 +25,9 @@ export function DropdownMenuComponent(properties: DropdownMenuProperties) {
                 className="dropdown-button"
                 onClick={ onButtonClick }
             >{ properties.label }</button>
+            { isOpen && (
+                <h1>It's open</h1>
+            )}
         </div>
     )
 }

@@ -1,5 +1,18 @@
+import { DropdownMenuComponent } from "./components/dropdown"
+
+import "./styles.css"
+
 export function App() {
     return (
-        <h1>Hello World</h1>
+        <div className="container">
+            <DropdownMenuComponent 
+                label="Contact"
+                items={[
+                    { title: "Github" },
+                    { title: "Linkedin" },
+                    { title: "Discord" }
+                ]}
+            />
+        </div>
     )
 }
