@@ -1,10 +1,12 @@
 :root {
-    --page-background: #FFFFFF;
-    --page-text-color: #000000;
+    --page-background: #F5F5F5;
+    --page-text-color: #121212;
 
-    --dropdown-button: #F5F5F5;
-    --dropdown-container-bg: #DDDDDD;
-    --dropdown-container-hover-bg: #999999;
+    --dropdown-button-bg: #10a37f;
+    --dropdown-button-fg: var(--page-background);
+
+    --dropdown-container-bg: #FFFFFF;
+    --dropdown-container-fg: var(--page-text-color);
 }
 
 * {
