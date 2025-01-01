@@ -4,7 +4,6 @@ import "./styles.css"
 
 export type DropdownItemProperties = {
     title: string
-    icon?: JSX.Element
     action?: () => unknown
 }
 
@@ -13,13 +12,13 @@ export type DropdownMenuProperties = {
     items: DropdownItemProperties[]
 }
 
-export function DropdownMenu({ items }: Omit<DropdownMenuProperties, "label">) {
+export function MenuComponent({ items }: Omit<DropdownMenuProperties, "label">) {
     return (
         <div className="dropdown-container">
             <ul>
-                {items.map(({ title }) => {
+                {items.map(({ title, action }) => {
                     return (
-                        <li>
+                        <li onClick={ action }>
                             { title }
                         </li>
                     )
@@ -41,7 +40,7 @@ export function DropdownMenuComponent(properties: DropdownMenuProperties) {
                 className="dropdown-button"
                 onClick={ onButtonClick }
             >{ properties.label }</button>
-            { isOpen && <DropdownMenu items={ properties.items }/> }
+            { isOpen && <MenuComponent items={ properties.items }/> }
         </div>
     )
 }
