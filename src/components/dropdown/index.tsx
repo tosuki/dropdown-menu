@@ -13,6 +13,22 @@ export type DropdownMenuProperties = {
     items: DropdownItemProperties[]
 }
 
+export function DropdownMenu({ items }: Omit<DropdownMenuProperties, "label">) {
+    return (
+        <div className="dropdown-container">
+            <ul>
+                {items.map(({ title }) => {
+                    return (
+                        <li>
+                            { title }
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
+    )
+}
+
 export function DropdownMenuComponent(properties: DropdownMenuProperties) {
     const [isOpen, setOpen] = useState<boolean>()
     
@@ -25,9 +41,7 @@ export function DropdownMenuComponent(properties: DropdownMenuProperties) {
                 className="dropdown-button"
                 onClick={ onButtonClick }
             >{ properties.label }</button>
-            { isOpen && (
-                <h1>It's open</h1>
-            )}
+            { isOpen && <DropdownMenu items={ properties.items }/> }
         </div>
     )
 }

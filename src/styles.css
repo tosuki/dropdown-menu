@@ -1,6 +1,10 @@
 :root {
     --page-background: #FFFFFF;
     --page-text-color: #000000;
+
+    --dropdown-button: #F5F5F5;
+    --dropdown-container-bg: #DDDDDD;
+    --dropdown-container-hover-bg: #999999;
 }
 
 * {
@@ -17,6 +21,12 @@ body {
 }
 
 .container {
+    padding: 20px;
+
     width: 100vw;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
